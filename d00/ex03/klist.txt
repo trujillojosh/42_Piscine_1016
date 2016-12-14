@@ -1,0 +1,5 @@
+redentials cache: API:19661
+        Principal: jtrujill@42.US.ORG
+
+		  Issued                Expires               Principal
+		  Oct 25 18:53:15 2016  Oct 26 04:53:15 2016  krbtgt/42.US.ORG@42.US.ORG
