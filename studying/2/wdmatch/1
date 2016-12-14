@@ -1,0 +1,59 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   wdmatch.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jtrujill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/17 17:36:43 by jtrujill          #+#    #+#             */
+/*   Updated: 2016/11/17 18:06:29 by jtrujill         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *str)
+{
+	while (*str)
+		ft_putchar(*str++);
+}
+
+void	ft_wdmatch(char *s1, char *s2)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (s1[i] != '\0' && s2[j] != '\0')
+	{
+		while (s1[i] != s2[j])
+			j++;
+		if (s1[i] == s2[j])
+		{
+			i++;
+			j++;
+		}
+	}
+	if (s1[i] == '\0')
+	{
+		ft_putstr(s1);
+	}
+	ft_putchar('\n');
+}
+
+int		main(int argc, char **argv)
+{
+	if (argc != 3)
+		ft_putchar('\n');
+	else
+	{
+		ft_wdmatch(argv[1], argv[2]);
+	}
+	return (0);
+}
